@@ -10,6 +10,7 @@ export class HomePage {
 
   constructor(public navCtrl: NavController, public api: ApiProvider) {
     this.api.get().subscribe((data) => {
+      // logando dados consumidos
       console.log(data);
     });
 
