@@ -10,10 +10,15 @@ import { Injectable } from '@angular/core';
 @Injectable()
 export class ApiProvider {
 
-  private API_URL:string = '';
+  private API_URL:string = 'http://www.jornalbrasilnovo.com.br/wp-json/';
 
   constructor(public http: HttpClient) {
     console.log('Hello ApiProvider Provider');
   }
+
+  get(query:string = ''){
+    return this.http.get(this.API_URL + query)
+  }
+  
 
 }
