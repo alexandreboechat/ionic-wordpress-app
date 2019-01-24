@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { NavController, NavParams } from 'ionic-angular';
 import { ApiProvider } from '../../providers/api/api';
 
 @Component({
@@ -8,12 +8,9 @@ import { ApiProvider } from '../../providers/api/api';
 })
 export class HomePage {
 
-  constructor(public navCtrl: NavController, public api: ApiProvider) {
-    this.api.get().subscribe((data) => {
-      // logando dados consumidos
-      console.log(data);
-    });
-
+  constructor(public navCtrl: NavController, public api: ApiProvider, public navParams: NavParams) {
+    //log correspondente ao ID de cada categoria
+    console.log(this.navParams.get('cat_id'));
   }
 
 }
