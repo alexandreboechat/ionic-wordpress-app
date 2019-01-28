@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import { ApiProvider } from '../../providers/api/api';
+import { DetalhePage } from '../detalhe/detalhe';
 
 @Component({
   selector: 'page-home',
@@ -19,6 +20,10 @@ export class HomePage {
     this.api.get('posts?_embed').subscribe((data) => {
       this.itens = data;
     });
+  }
+  
+  abrirDetalhe(item) {
+    this.navCtrl.push(DetalhePage, {post:item})
   }
 
 }
