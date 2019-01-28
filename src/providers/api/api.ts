@@ -11,21 +11,21 @@ import { Injectable } from '@angular/core';
 export class ApiProvider {
 
   // URL default para a chamada do JSON no Wordpress 'wp-json'
-  private API_URL:string = 'http://www.jornalbrasilnovo.com.br/wp-json/wp/v2/';
-  public Categorias:any = [];
+  private API_URL: string = 'http://www.jornalbrasilnovo.com.br/wp-json/wp/v2/';
+  public Categorias: any = [];
 
   constructor(public http: HttpClient) {
   }
 
-  get(query:string = ''){
+  get(query: string = '') {
     return this.http.get(this.API_URL + query)
   }
 
-  getCategorias(){
+  getCategorias() {
     this.get('categories').subscribe((data) => {
       this.Categorias = data;
     });
   }
-  
+
 
 }

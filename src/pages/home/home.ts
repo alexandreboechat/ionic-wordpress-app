@@ -8,9 +8,17 @@ import { ApiProvider } from '../../providers/api/api';
 })
 export class HomePage {
 
+  public itens: any = [];
   constructor(public navCtrl: NavController, public api: ApiProvider, public navParams: NavParams) {
     //log correspondente ao ID de cada categoria
     console.log(this.navParams.get('cat_id'));
+    this.getPosts();
+  }
+
+  getPosts() {
+    this.api.get('posts?_embed').subscribe((data) => {
+      this.itens = data;
+    });
   }
 
 }

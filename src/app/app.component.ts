@@ -14,9 +14,9 @@ export class MyApp {
 
   rootPage: any = HomePage;
   constructor(public platform: Platform,
-              public statusBar: StatusBar, 
-              public splashScreen: SplashScreen,
-              public api: ApiProvider) {
+    public statusBar: StatusBar,
+    public splashScreen: SplashScreen,
+    public api: ApiProvider) {
     this.initializeApp();
   }
 
@@ -28,9 +28,7 @@ export class MyApp {
     });
   }
 
-  openPage(cat_id:number = 0) {
-    // Reset the content nav to have just this page
-    // we wouldn't want the back button to show in this scenario
-    this.nav.setRoot(HomePage, {cat_id: cat_id});
+  openPage(cat_id: number = 0) {
+    this.nav.setRoot(HomePage, { cat_id: cat_id });
   }
 }
