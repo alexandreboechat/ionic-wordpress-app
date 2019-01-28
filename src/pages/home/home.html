@@ -23,5 +23,8 @@
       </ion-row>
     </ion-card-content>
   </ion-card>
+  <div *ngIf="Carregando" text-center padding>
+    <ion-spinner></ion-spinner>
+  </div>
   <button ion-button full (click)="getPosts()">Carregar mais</button>
 </ion-content>
