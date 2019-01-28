@@ -10,6 +10,9 @@ import { DetalhePage } from '../detalhe/detalhe';
 export class HomePage {
 
   public itens: any = [];
+  private per_page:number = 8;
+  private page:number = 1;
+
   constructor(public navCtrl: NavController, public api: ApiProvider, public navParams: NavParams) {
     //log correspondente ao ID de cada categoria
     console.log(this.navParams.get('cat_id'));
@@ -17,8 +20,9 @@ export class HomePage {
   }
 
   getPosts(){
-    this.api.get('posts?_embed').subscribe((data) => {
-      this.itens = data;
+    this.api.get('posts?_embed&per_page='+this.per_page + '&page='+this.page).subscribe((data) => {
+      this.itens = this.itens.concat(data);
+      this.page++;
     });
   }
   
