@@ -25,5 +25,16 @@ export class HomePage {
   abrirDetalhe(item){
     this.navCtrl.push(DetalhePage, {post:item});
   }
+  
+  pegarNomeCat(cat_id:number){
+    let cat_name:string = '';
+    this.api.Categorias.forEach(element => {
+      if(element.id==cat_id){
+        cat_name = element.name;
+      }
+    });
+
+    return cat_name;
+  }
 
 }
