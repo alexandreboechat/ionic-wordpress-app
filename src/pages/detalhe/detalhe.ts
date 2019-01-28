@@ -7,7 +7,9 @@ import { NavController, NavParams } from 'ionic-angular';
 })
 export class DetalhePage {
 
+  public post:any = [];
   constructor(public navCtrl: NavController, public navParams: NavParams) {
+    this.post =  navParams.get('post');
   }
 
   ionViewDidLoad() {

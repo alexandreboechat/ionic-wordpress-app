@@ -16,14 +16,14 @@ export class HomePage {
     this.getPosts();
   }
 
-  getPosts() {
+  getPosts(){
     this.api.get('posts?_embed').subscribe((data) => {
       this.itens = data;
     });
   }
   
-  abrirDetalhe(item) {
-    this.navCtrl.push(DetalhePage, {post:item})
+  abrirDetalhe(item){
+    this.navCtrl.push(DetalhePage, {post:item});
   }
 
 }
