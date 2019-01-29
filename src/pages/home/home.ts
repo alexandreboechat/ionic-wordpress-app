@@ -25,7 +25,7 @@ export class HomePage {
     if (!this.Carregando) {
       this.Carregando = true;
       this.api.get('posts?_embed&per_page='+this.per_page +'&page='+this.page)
-        .subscribe((data) => {
+        .subscribe((data:any) => {
           this.Carregando =  false;
           this.itens = this.itens.concat(data);
           if (data.lenght === this.per_page){
