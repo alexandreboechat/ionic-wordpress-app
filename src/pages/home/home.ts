@@ -28,7 +28,7 @@ export class HomePage {
         .subscribe((data) => {
           this.Carregando =  false;
           this.itens = this.itens.concat(data);
-          if (data.length === this.per_page){
+          if (data.lenght === this.per_page){
             this.page++;
             this.mostrarCarregarMais = true;
           } else {
